@@ -7,7 +7,12 @@ const List = (props) => {
     <div>
       items go here
       {props.items.map((itm) => (
-        <Item key={itm.id} item={itm} handleDelete={props.handleDelete} />
+        <Item
+          key={itm.id}
+          item={itm}
+          handleDelete={props.handleDelete}
+          editedItem={props.editedItem}
+        />
       ))}
     </div>
   );

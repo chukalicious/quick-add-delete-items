@@ -4,8 +4,9 @@ const Item = (props) => {
   console.log("props in Item component: ", props);
 
   const [editing, setEditing] = useState(false);
+  const [newTextValue, setNewTextValue] = useState("");
 
-  const handleEdit = () => {
+  const switchEdit = () => {
     setEditing(!editing);
   };
 
@@ -14,12 +15,19 @@ const Item = (props) => {
       {editing ? (
         <div>
           {" "}
-          <input /> <button onClick={handleEdit}>Save</button>{" "}
+          <input />{" "}
+          <button
+            onClick={() => {
+              props.editedItem(newTextValue);
+            }}
+          >
+            Save
+          </button>{" "}
         </div>
       ) : (
         <div>
           {props.item.text}
-          <button onClick={handleEdit}>Edit</button>
+          <button onClick={switchEdit}>Edit</button>
           <button onClick={() => props.handleDelete(props.item.id)}>
             Delete
           </button>{" "}

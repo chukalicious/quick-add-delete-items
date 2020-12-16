@@ -10,6 +10,10 @@ function App() {
   const getItem = (item) => {
     setList([...list, item]);
   };
+  const editedItem = (newText) => {
+    console.log("new Text", newText);
+    // const edited = list.find((itm) => itm.id == newText.id ? )
+  };
 
   //create .filter function to delete items in list
   const handleDelete = (itemId) => {
@@ -19,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <Form getItem={getItem} />
-      <List items={list} handleDelete={handleDelete} />
+      <List items={list} handleDelete={handleDelete} editedItem={editedItem} />
     </div>
   );
 }
