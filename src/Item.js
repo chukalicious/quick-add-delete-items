@@ -2,7 +2,6 @@ import React from "react";
 
 const Item = (props) => {
   console.log("props in Item component: ", props);
-  const id = props.item.id;
 
   return (
     <div>
